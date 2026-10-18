@@ -59,6 +59,20 @@ line-height:1.6;
 
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.logo img {
+    display: block;
+    width: auto;
+    height: 46px;
+    max-width: 180px;
+    object-fit: contain;
+}
+
 img{
 
 display:block;
