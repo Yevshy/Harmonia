@@ -25,58 +25,85 @@
 
 <body>
 
-<header class="header">
+<!-- HEADER: початок -->
+<header class="site-header">
+    <div class="site-header__inner">
 
-<div class="container">
+        <!-- Логотип -->
+        <a class="site-header__logo" href="/" aria-label="Головна сторінка">
+            <img src="logo.png" alt="Гармонія">
+        </a>
 
-<a href="/" class="logo">
-    <img src="logo.png" alt="Гармонія">
-</a>
+        <!-- Десктопна навігація -->
+        <nav class="site-header__nav" aria-label="Головна навігація">
+            <a href="#about">Про ліцей</a>
+            <a href="#learning">Навчання</a>
+            <a href="Teachers/">Вчителі</a>
+            <a href="#admission">Вступ</a>
+            <a href="#news">Новини</a>
+            <a href="#contacts">Контакти</a>
+        </nav>
 
-</div>
+        <!-- Десктопна кнопка -->
+        <a class="site-header__apply" href="#admission">
+            Подати заявку
+        </a>
 
-<div class="logo-text">
+        <!-- Мобільна кнопка меню -->
+        <button
+            class="site-header__menu-toggle"
+            type="button"
+            aria-label="Відкрити меню"
+            aria-controls="site-mobile-menu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-<span>Приватний ліцей</span>
+    </div>
+</header>
+<!-- HEADER: кінець -->
 
-<strong>Гармонія</strong>
 
-</div>
+<!-- Затемнення за мобільним меню -->
+<div class="site-header__overlay"></div>
 
-</a>
+<!-- Мобільне меню -->
+<aside
+    class="site-mobile-menu"
+    id="site-mobile-menu"
+    aria-label="Мобільна навігація"
+    aria-hidden="true"
+    inert
+>
+    <div class="site-mobile-menu__top">
+        <span class="site-mobile-menu__label">Меню</span>
 
-<nav>
+        <button
+            class="site-mobile-menu__close"
+            type="button"
+            aria-label="Закрити меню"
+        >
+            <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+            >
+                <path
+                    d="M6 6L18 18M18 6L6 18"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                />
+            </svg>
+        </button>
+    </div>
 
-<a href="#">Про ліцей</a>
-<a href="#">Навчання</a>
-<a href="#">Вступ</a>
-<a href="#">Новини</a>
-<a href="#">Контакти</a>
-
-</nav>
-
-<button class="menu-toggle" aria-label="Відкрити меню">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
-
-<a href="#" class="button button-small">
-
-Подати заявку
-
-</a>
-
-</div>
-
-<div class="mobile-overlay"></div>
-
-<aside class="mobile-menu">
-    <button class="mobile-menu-close" aria-label="Закрити меню">
-        ×
-    </button>
-
-    <nav class="mobile-nav">
+    <nav class="site-mobile-menu__nav" aria-label="Мобільна навігація">
         <a href="#about">Про ліцей</a>
         <a href="#learning">Навчання</a>
         <a href="Teachers/">Вчителі</a>
@@ -85,12 +112,11 @@
         <a href="#contacts">Контакти</a>
     </nav>
 
-    <a href="#admission" class="button mobile-apply">
+    <a class="site-mobile-menu__apply" href="#admission">
         Подати заявку
+        <span aria-hidden="true">↗</span>
     </a>
 </aside>
-
-</header>
 
 <main>
 
@@ -987,6 +1013,8 @@ info@harmony-school.com
 </div>
 
 </footer>
+
+<script src="app.js"></script>
 
 <script src="app.js"></script>
 
