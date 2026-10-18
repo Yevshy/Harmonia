@@ -413,66 +413,106 @@ color:var(--text-light);
 TEACHERS
 =========================================================== */
 
-.teachers-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:28px;
-
+.teachers-section {
+    overflow: hidden;
 }
 
-.teacher-card{
+.teachers-grid {
+    width: 100%;
 
-background:white;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
-border-radius:30px;
-
-overflow:hidden;
-
-border:1px solid var(--border);
-
-box-shadow:var(--shadow);
-
-transition:var(--transition);
-
+    gap: 18px;
 }
 
-.teacher-card:hover{
+.teacher-card {
+    min-width: 0;
 
-transform:translateY(-8px);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
 
-box-shadow:var(--shadow-hover);
+    overflow: hidden;
 
+    box-shadow: 0 8px 30px rgba(18, 38, 63, .05);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
-.teacher-card img{
-
-aspect-ratio:4/5;
-
-object-fit:cover;
-
+.teacher-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
 }
 
-.teacher-card h3{
+.teacher-image {
+    width: 100%;
+    aspect-ratio: 1 / 1.08;
 
-padding:26px 26px 10px;
-
-font-size:24px;
-
+    overflow: hidden;
+    background: #edf3fa;
 }
 
-.teacher-card p{
+.teacher-image img {
+    width: 100%;
+    height: 100%;
 
-padding:0 26px 28px;
+    display: block;
 
-color:var(--text-light);
+    object-fit: cover;
 
+    transition: transform .45s ease;
 }
 
+.teacher-card:hover .teacher-image img {
+    transform: scale(1.035);
+}
 
+.teacher-info {
+    padding: 18px 18px 20px;
+}
 
+.teacher-info h3 {
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+.teacher-info p {
+    margin: 7px 0 0;
+
+    color: #74839a;
+
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.teachers-more {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 38px;
+}
+@media (max-width: 1000px) {
+    .teachers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .teachers-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .teacher-image {
+        aspect-ratio: 1 / .95;
+    }
+}
 
 
 /* ===========================================================
