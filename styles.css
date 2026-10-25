@@ -504,9 +504,12 @@ TEACHERS
 }
 
 @media (max-width: 560px) {
-    .teachers-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+    
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
     }
 
     .teacher-image {
