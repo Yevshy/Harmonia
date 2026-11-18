@@ -2350,3 +2350,17 @@ body.site-menu-open .site-mobile-menu {
         min-height: 190px;
     }
 }
+
+/* FIX: 4 вчителі в одному рядку */
+.teachers-section .teachers-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 24px;
+    width: 100%;
+}
+
+@media (max-width: 560px) {
+    .teachers-section .teachers-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
