@@ -497,24 +497,36 @@ TEACHERS
 
     margin-top: 38px;
 }
+
 @media (max-width: 1000px) {
     .teachers-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .teacher-info {
+        padding: 12px;
+    }
+
+    .teacher-info h3 {
+        font-size: 14px;
+    }
+
+    .teacher-info p {
+        font-size: 12px;
     }
 }
 
 @media (max-width: 560px) {
-    
-.teachers-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
-    width: 100%;
+    .teachers-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
     }
 
     .teacher-image {
         aspect-ratio: 1 / .95;
     }
+
 }
 
 
