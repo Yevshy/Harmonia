@@ -2409,7 +2409,7 @@ body.site-menu-open .site-mobile-menu {
 .teachers-more .button-outline {
     background: linear-gradient(90deg, #4B8DFF, #7B6DFF);
     color: #fff;
-    border: 3px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.65);
     text-decoration: none;
     transition: transform .25s ease, box-shadow .25s ease;
 }
