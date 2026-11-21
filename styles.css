@@ -498,6 +498,38 @@ TEACHERS
     margin-top: 38px;
 }
 
+
+/* Кнопка "Всі вчителі" */
+.teachers-more .button-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px 28px;
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg, #4B8DFF, #6A7DFF);
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    box-shadow: 0 6px 18px rgba(75, 141, 255, 0.2);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.teachers-more .button-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 9px 24px rgba(75, 141, 255, 0.3);
+}
+
+.teachers-more .button-arrow {
+    color: #fff;
+}
+
 @media (max-width: 1000px) {
     .teachers-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
