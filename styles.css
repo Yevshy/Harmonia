@@ -2427,7 +2427,7 @@ body.site-menu-open .site-mobile-menu {
 .home-hero__instagram {
     background: linear-gradient(135deg, #833ab4 0%, #c13584 50%, #fd1d1d 100%);
     color: #fff;
-    border: 3px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.693);
 }
 
 .home-hero__instagram svg {
