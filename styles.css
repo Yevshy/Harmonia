@@ -2396,3 +2396,69 @@ body.site-menu-open .site-mobile-menu {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
 }
+
+
+/* ===========================================================
+   ЄДИНИЙ СТИЛЬ КНОПОК
+=========================================================== */
+
+.button,
+.button-outline,
+.site-header__apply,
+.home-hero__button,
+.teachers-more .button-outline {
+    background: linear-gradient(90deg, #4B8DFF, #7B6DFF);
+    color: #fff;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.button:hover,
+.button-outline:hover,
+.site-header__apply:hover,
+.home-hero__button:hover,
+.teachers-more .button-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(75, 110, 255, .25);
+}
+
+/* Instagram — фірмовий градієнт */
+.home-hero__instagram {
+    background: linear-gradient(135deg, #833ab4 0%, #c13584 50%, #fd1d1d 100%);
+    color: #fff;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.home-hero__instagram svg {
+    color: #fff;
+    stroke: #fff;
+}
+
+/* ===========================================================
+   CTA — ОСОБЛИВІ КНОПКИ
+=========================================================== */
+
+.cta .cta-buttons .button {
+    background: #fff;
+    color: #4B8DFF;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+.cta .cta-buttons .button-outline {
+    background: transparent;
+    color: #fff;
+    border: 3px solid #fff;
+    box-shadow: none;
+}
+
+.cta .cta-buttons .button:hover {
+    background: #f3f6ff;
+    color: #4B8DFF;
+}
+
+.cta .cta-buttons .button-outline:hover {
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+}
