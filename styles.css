@@ -2554,6 +2554,12 @@ body.site-menu-open .site-mobile-menu {
    CONTACT MODAL
 =========================================================== */
 
+@property --contact-modal-blur {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 0px;
+}
+
 .contact-modal {
     position: fixed;
     inset: 0;
@@ -2579,23 +2585,22 @@ body.site-menu-open .site-mobile-menu {
     inset: 0;
     background: rgba(8, 24, 62, 0.72);
 
-    -webkit-backdrop-filter: blur(0px);
-    backdrop-filter: blur(0px);
+    --contact-modal-blur: 0px;
+    -webkit-backdrop-filter: blur(var(--contact-modal-blur));
+    backdrop-filter: blur(var(--contact-modal-blur));
 
     opacity: 0;
 
     transition:
         opacity .3s ease,
-        -webkit-backdrop-filter .3s ease,
-        backdrop-filter .3s ease;
+        --contact-modal-blur .3s ease;
 
-    will-change: opacity, backdrop-filter;
+    will-change: opacity, --contact-modal-blur;
 }
 
 .contact-modal.is-open .contact-modal__backdrop {
+    --contact-modal-blur: 10px;
     opacity: 1;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
 }
 
 .contact-modal__dialog {
