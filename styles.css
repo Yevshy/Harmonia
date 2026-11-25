@@ -2577,9 +2577,15 @@ body.site-menu-open .site-mobile-menu {
 .contact-modal__backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(8, 24, 62, .7);
-    backdrop-filter: blur(10px);
+    background: rgba(8, 24, 62, 0.72);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-modal.is-open .contact-modal__backdrop {
+    opacity: 1;
 }
 
 .contact-modal__dialog {
@@ -2787,4 +2793,30 @@ body.contact-modal-open {
     .contact-modal__dialog h2 {
         font-size: 26px;
     }
+}
+.cta .cta-buttons .button-outline {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.cta .cta-buttons .button-outline::before,
+.cta .cta-buttons .button-outline::after {
+    pointer-events: none;
+}
+.contact-modal__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+}
+
+.contact-modal__close::first-line {
+    line-height: 1;
 }
