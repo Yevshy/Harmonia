@@ -2479,3 +2479,72 @@ body.site-menu-open .site-mobile-menu {
     height: auto;
     object-fit: contain;
 }
+
+
+/* CTA BUTTONS — фінальне оформлення */
+
+.cta .cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cta .cta-buttons a.button,
+.cta .cta-buttons a.button-outline {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+    padding: 13px 22px !important;
+
+    border-radius: 14px !important;
+    box-sizing: border-box;
+
+    font-family: inherit;
+    font-size: 16px !important;
+    font-weight: 600;
+    line-height: 1.2;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: all .25s ease;
+}
+
+/* Подати заявку — біла кнопка */
+.cta .cta-buttons a.button {
+    background: #fff !important;
+    color: #4B8DFF !important;
+    border: 3px solid rgba(255, 255, 255, .1) !important;
+}
+
+/* Зв'язатися — прозора кнопка */
+.cta .cta-buttons a.button-outline {
+    background: transparent !important;
+    color: #fff !important;
+    border: 3px solid #fff !important;
+}
+
+.cta .cta-buttons a.button:hover {
+    background: #f3f6ff !important;
+    transform: translateY(-2px);
+}
+
+.cta .cta-buttons a.button-outline:hover {
+    background: rgba(255, 255, 255, .12) !important;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .cta .cta-buttons {
+        justify-content: flex-start;
+    }
+
+    .cta .cta-buttons a.button,
+    .cta .cta-buttons a.button-outline {
+        width: 100%;
+    }
+}
