@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Наші вчителі — ліцей «Гармонія»</title>
+
+    <meta name="description" content="Познайомтеся з командою педагогів Хмельницького приватного ліцею «Гармонія».">
+    <meta name="theme-color" content="#4B8DFF">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .all-teachers-page {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            min-height: 65vh;
+        }
+
+        .all-teachers-heading {
+            margin-bottom: 56px;
+        }
+
+        .all-teachers-heading h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin: 12px 0 16px;
+        }
+
+        .all-teachers-heading p {
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .all-teachers-page .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            width: 100%;
+        }
+
+        .all-teachers-back {
+            display: flex;
+            justify-content: center;
+            margin-top: 56px;
+        }
+
+        @media (max-width: 1000px) {
+            .all-teachers-page .teachers-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 560px) {
+            .all-teachers-page {
+                padding-top: 115px;
+                padding-bottom: 65px;
+            }
+
+            .all-teachers-heading {
+                margin-bottom: 36px;
+            }
+
+            .all-teachers-page .teachers-grid {
+                gap: 16px;
+            }
+
+            .all-teachers-back {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+    <div class="site-header__inner">
+
+        <a class="site-header__logo" href="index.html" aria-label="Головна сторінка">
+            <img src="logo.png" alt="Гармонія">
+        </a>
+
+        <nav class="site-header__nav" aria-label="Головна навігація">
+            <a href="index.html#why-us">Про ліцей</a>
+            <a href="index.html#programs">Навчання</a>
+            <a href="#all-teachers">Вчителі</a>
+            <a href="index.html#admission">Вступ</a>
+            <a href="index.html#news">Новини</a>
+            <a href="index.html#contacts">Контакти</a>
+        </nav>
+
+        <a class="site-header__apply" href="index.html#admission">
+            Подати заявку
+        </a>
+
+        <button
+            class="site-header__menu-toggle"
+            type="button"
+            aria-label="Відкрити меню"
+            aria-controls="site-mobile-menu"
+            aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</header>
+
+<!-- ЗАТЕМНЕННЯ МОБІЛЬНОГО МЕНЮ -->
+<div class="site-header__overlay"></div>
+
+<!-- МОБІЛЬНЕ МЕНЮ -->
+<aside
+    class="site-mobile-menu"
+    id="site-mobile-menu"
+    aria-label="Мобільна навігація"
+    aria-hidden="true"
+    inert>
+
+    <div class="site-mobile-menu__top">
+        <span class="site-mobile-menu__label">Меню</span>
+
+        <button
+            class="site-mobile-menu__close"
+            type="button"
+            aria-label="Закрити меню">
+
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 6L18 18M18 6L6 18"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"/>
+            </svg>
+
+        </button>
+    </div>
+
+    <nav class="site-mobile-menu__nav" aria-label="Мобільна навігація">
+        <a href="index.html#why-us">Про ліцей</a>
+        <a href="index.html#programs">Навчання</a>
+        <a href="#all-teachers">Вчителі</a>
+        <a href="index.html#admission">Вступ</a>
+        <a href="index.html#news">Новини</a>
+        <a href="index.html#contacts">Контакти</a>
+    </nav>
+
+    <a class="site-mobile-menu__apply" href="index.html#admission">
+        Подати заявку
+        <span aria-hidden="true">↗</span>
+    </a>
+
+</aside>
+
+<main>
+
+    <!-- СТОРІНКА ВЧИТЕЛІВ -->
+    <section class="section all-teachers-page" id="all-teachers">
+
+        <div class="container">
+
+            <div class="section-heading all-teachers-heading">
+
+                <span>Команда «Гармонії»</span>
+
+                <h1>Наші вчителі</h1>
+
+                <p>
+                    Люди, які надихають навчатися, відкривати нове
+                    та впевнено рухатися до майбутнього.
+                </p>
+
+            </div>
+
+            <div class="teachers-grid">
+
+                <article class="teacher-card">
+
+                    <div class="teacher-image">
+                        <img
+                            src="Teachers/teacher1.jpg"
+                            alt="Проскурівська Валентина Петрівна"
+                            loading="lazy">
+                    </div>
+
+                    <div class="teacher-info">
+                        <h3>Проскурівська Валентина Петрівна</h3>
+                        <p>Директор ліцею</p>
+                    </div>
+
+                </article>
+
+                <article class="teacher-card">
+
+                    <div class="teacher-image">
+                        <img
+                            src="Teachers/teacher2.jpg"
+                            alt="Стеценко Інга Валентинівна"
+                            loading="lazy">
+                    </div>
+
+                    <div class="teacher-info">
+                        <h3>Стеценко Інга Валентинівна</h3>
+                        <p>Вчитель української мови та літератури</p>
+                    </div>
+
+                </article>
+
+                <article class="teacher-card">
+
+                    <div class="teacher-image">
+                        <img
+                            src="Teachers/teacher3.jpg"
+                            alt="Мельник Ольга Василівна"
+                            loading="lazy">
+                    </div>
+
+                    <div class="teacher-info">
+                        <h3>Мельник Ольга Василівна</h3>
+                        <p>Вчитель початкових класів</p>
+                    </div>
+
+                </article>
+
+                <article class="teacher-card">
+
+                    <div class="teacher-image">
+                        <img
+                            src="Teachers/teacher4.jpg"
+                            alt="Муштрук Наталія Володимирівна"
+                            loading="lazy">
+                    </div>
+
+                    <div class="teacher-info">
+                        <h3>Муштрук Наталія Володимирівна</h3>
+                        <p>Вчитель німецької мови</p>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="all-teachers-back">
+                <a href="index.html" class="button-outline">
+                    ← На головну
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contacts">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <a href="index.html" class="footer-logo">
+                <img src="logo.png" alt="Гармонія">
+            </a>
+
+            <div>
+                <strong>Гармонія</strong>
+                <p>Хмельницький приватний ліцей</p>
+            </div>
+
+            <p class="footer-description">
+                Приватний ліцей, що поєднує сучасну освіту,
+                безпечне середовище та індивідуальний підхід
+                до кожної дитини.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>Навігація</h4>
+
+            <ul>
+                <li><a href="index.html#why-us">Про ліцей</a></li>
+                <li><a href="index.html#programs">Навчання</a></li>
+                <li><a href="#all-teachers">Вчителі</a></li>
+                <li><a href="index.html#admission">Вступ</a></li>
+                <li><a href="index.html#news">Новини</a></li>
+                <li><a href="index.html#contacts">Контакти</a></li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h4>Контакти</h4>
+
+            <ul>
+                <li>м. Хмельницький</li>
+                <li>+38 (000) 000-00-00</li>
+                <li>info@harmony-school.com</li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h4>Режим роботи</h4>
+
+            <ul>
+                <li>Пн–Пт: 08:00–18:00</li>
+                <li>Сб: 09:00–14:00</li>
+                <li>Нд — вихідний</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+        <p>
+            © 2026 Приватний ліцей «Гармонія».
+            Усі права захищено.
+        </p>
+    </div>
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
