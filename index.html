@@ -44,10 +44,11 @@
             <a href="#contacts">Контакти</a>
         </nav>
 
-        <!-- Десктопна кнопка -->
-        <a class="site-header__apply" href="#admission">
-            Подати заявку
-        </a>
+       <a class="site-header__apply"
+   href="#contactModal"
+   data-contact-trigger="Подати заявку">
+    Подати заявку
+</a>
 
         <!-- Мобільна кнопка меню -->
         <button
@@ -802,11 +803,13 @@
 
             
 <div class="cta-buttons">
-    <a href="#" class="button" data-contact-trigger="Подати заявку">
+    <a href="#contactModal" class="button"
+       data-contact-trigger="Подати заявку">
         Подати заявку
     </a>
 
-    <a href="#" class="button-outline" data-contact-trigger="Зв'язатися з нами">
+    <a href="#contactModal" class="button-outline"
+       data-contact-trigger="Зв'язатися з нами">
         Зв'язатися з нами
     </a>
 </div>
