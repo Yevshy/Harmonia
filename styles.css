@@ -2836,3 +2836,21 @@ body.contact-modal-open {
 .contact-modal__close::first-line {
     line-height: 1;
 }
+
+/* =================================
+   SMOOTH ANCHOR NAVIGATION
+================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 130px;
+}
+
+#why-us,
+#programs,
+#teachers,
+#admission,
+#news,
+#contacts {
+    scroll-margin-top: 130px;
+}
