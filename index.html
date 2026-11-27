@@ -216,17 +216,18 @@
         <div class="home-hero__media">
 
             <video
-                class="home-hero__video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                poster="assets/hero.jpg"
-                aria-label="Життя приватного ліцею Гармонія"
-            >
-                <source src="assets/hero.mp4" type="video/mp4">
-            </video>
+    class="home-hero__video"
+    autoplay
+    muted
+    loop
+    playsinline
+    webkit-playsinline
+    preload="auto"
+    poster="assets/hero.jpg"
+    aria-label="Життя приватного ліцею Гармонія"
+>
+    <source src="assets/hero.mp4" type="video/mp4">
+</video>
 
 
         </div>
@@ -1048,6 +1049,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <script src="app.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.querySelector('.home-hero__video');
+
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
+    function startVideo() {
+        if (!video.paused) return;
+
+        const playback = video.play();
+
+        if (playback !== undefined) {
+            playback.catch(function (error) {
+                console.warn('Safari заблокував автозапуск відео:', error);
+            });
+        }
+    }
+
+    video.addEventListener('loadeddata', startVideo, { once: true });
+    video.addEventListener('canplay', startVideo, { once: true });
+
+    startVideo();
+});
+</script>
 
 </body>
 
