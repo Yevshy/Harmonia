@@ -364,111 +364,54 @@
 
 
 
-<!-- =========================
-     НАПРЯМКИ НАВЧАННЯ
-========================== -->
 
 <section class="section alt">
-
     <div class="container">
 
         <div class="section-heading">
-
             <span>Освітні програми</span>
-
-            <h2 id="programs">
-
-                Навчання на кожному етапі розвитку
-
-            </h2>
-
+            <h2 id="programs">Навчання на кожному етапі розвитку</h2>
         </div>
 
         <div class="program-grid">
 
-            <a href="#" class="program-card">
-
+            <button class="program-card" type="button"
+                data-program="primary" aria-expanded="false">
                 <div>
-
-                    <small>
-
-                        1–4 класи
-
-                    </small>
-
-                    <h3>
-
-                        Початкова школа
-
-                    </h3>
-
+                    <small>1–4 класи</small>
+                    <h3>Початкова школа</h3>
                 </div>
+                <span aria-hidden="true">+</span>
+            </button>
 
-                <span>
-
-                    →
-
-                </span>
-
-            </a>
-
-            <a href="#" class="program-card">
-
+            <button class="program-card" type="button"
+                data-program="middle" aria-expanded="false">
                 <div>
-
-                    <small>
-
-                        5–9 класи
-
-                    </small>
-
-                    <h3>
-
-                        Середня школа
-
-                    </h3>
-
+                    <small>5–9 класи</small>
+                    <h3>Середня школа</h3>
                 </div>
+                <span aria-hidden="true">+</span>
+            </button>
 
-                <span>
-
-                    →
-
-                </span>
-
-            </a>
-
-            <a href="#" class="program-card">
-
+            <button class="program-card" type="button"
+                data-program="high" aria-expanded="false">
                 <div>
-
-                    <small>
-
-                        10–11 класи
-
-                    </small>
-
-                    <h3>
-
-                        Старша школа
-
-                    </h3>
-
+                    <small>10–11 класи</small>
+                    <h3>Старша школа</h3>
                 </div>
-
-                <span>
-
-                    →
-
-                </span>
-
-            </a>
+                <span aria-hidden="true">+</span>
+            </button>
 
         </div>
 
-    </div>
+        <div class="program-details" id="programDetails"
+             aria-live="polite" aria-hidden="true">
+            <div class="program-details__content" id="programDetailsContent"></div>
+        </div>
 
+    </div>
 </section>
+
 
 
 
@@ -1023,6 +966,86 @@ info@harmony-school.com
         </div>
     </div>
 </div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.program-card[data-program]');
+    const panel = document.getElementById('programDetails');
+    const content = document.getElementById('programDetailsContent');
+
+    if (!buttons.length || !panel || !content) return;
+
+    const descriptions = {
+        primary: {
+            title: 'Початкова школа',
+            paragraphs: [
+                'Навчання починається з цікавості, довіри та уваги до кожної дитини. Невеликі класи дозволяють учителю краще розуміти індивідуальні особливості учнів, помічати їхні успіхи та вчасно допомагати там, де це потрібно.',
+                'Ми формуємо міцну основу знань, розвиваємо самостійність, допитливість і впевненість у власних силах. Важливо, щоб дитина не просто засвоювала матеріал, а розуміла його та із задоволенням відкривала для себе нове.'
+            ]
+        },
+
+        middle: {
+            title: 'Середня школа',
+            paragraphs: [
+                'Це час, коли дитина відкриває нові інтереси, вчиться мислити ширше та поступово стає самостійнішою. Ми приділяємо увагу не лише академічним результатам, а й умінню аналізувати інформацію, аргументувати власну думку та застосовувати знання на практиці.',
+                'Невеликі класи дають можливість працювати з учнями індивідуально, підтримувати їхній темп навчання та не залишати прогалин у знаннях. Так ми створюємо міцну основу для успішного переходу до старшої школи.'
+            ]
+        },
+
+        high: {
+            title: 'Старша школа',
+            paragraphs: [
+                'Навчання у старших класах має чітку мету — якісну підготовку до випускних і вступних іспитів. Програма та робота вчителів спрямовані на системне засвоєння матеріалу, поглиблення профільних знань і відпрацювання необхідних навичок.',
+                'Завдяки невеликим класам учителі можуть приділяти більше уваги кожному учневі, вчасно виявляти складні теми та допомагати їх опановувати. Ми прагнемо, щоб учні отримували повноцінну підготовку без необхідності додатково шукати репетиторів.'
+            ]
+        }
+    };
+
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const key = button.dataset.program;
+            const isAlreadyOpen = button.classList.contains('is-active');
+
+            buttons.forEach(function (item) {
+                item.classList.remove('is-active');
+                item.setAttribute('aria-expanded', 'false');
+                item.querySelector('span').textContent = '+';
+            });
+
+            if (isAlreadyOpen) {
+                panel.classList.remove('is-open');
+                panel.setAttribute('aria-hidden', 'true');
+                return;
+            }
+
+            const selected = descriptions[key];
+
+            if (!selected) return;
+
+            content.replaceChildren();
+
+            const heading = document.createElement('h3');
+            heading.textContent = selected.title;
+            content.appendChild(heading);
+
+            selected.paragraphs.forEach(function (paragraphText) {
+                const paragraph = document.createElement('p');
+                paragraph.textContent = paragraphText;
+                content.appendChild(paragraph);
+            });
+
+            button.classList.add('is-active');
+            button.setAttribute('aria-expanded', 'true');
+            button.querySelector('span').textContent = '×';
+
+            panel.classList.add('is-open');
+            panel.setAttribute('aria-hidden', 'false');
+        });
+    });
+});
+</script>
+
 
 <script src="app.js"></script>
 

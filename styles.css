@@ -2891,3 +2891,144 @@ html {
 .stats-grid .stat-large:hover strong::after {
     opacity: 1;
 }
+
+
+/* ===========================================================
+   PROGRAMS — інтерактивні картки
+=========================================================== */
+
+.program-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.program-card {
+    width: 100%;
+    min-width: 0;
+    font-family: inherit;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 34px;
+    min-height: 210px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: var(--shadow);
+    transition: background .3s ease, color .3s ease,
+                transform .3s ease, box-shadow .3s ease,
+                border-color .3s ease;
+}
+
+.program-card:hover,
+.program-card:focus-visible,
+.program-card.is-active {
+    background: linear-gradient(110deg, #4B8DFF, #7B6DFF);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-5px);
+    box-shadow: 0 16px 35px rgba(75, 110, 255, .22);
+}
+
+.program-card small {
+    color: var(--primary);
+    transition: color .3s ease;
+}
+
+.program-card:hover small,
+.program-card:focus-visible small,
+.program-card.is-active small {
+    color: rgba(255,255,255,.8);
+}
+
+.program-card h3 {
+    font-size: clamp(23px, 2.2vw, 32px);
+}
+
+.program-card span {
+    flex: 0 0 auto;
+    font-size: 30px;
+    color: var(--primary);
+    transition: color .3s ease, transform .3s ease;
+}
+
+.program-card:hover span,
+.program-card:focus-visible span,
+.program-card.is-active span {
+    color: #fff;
+}
+
+.program-card.is-active span {
+    transform: rotate(45deg);
+}
+
+/* Панель з описом */
+
+.program-details {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    margin-top: 0;
+    transition: grid-template-rows .4s ease,
+                opacity .3s ease, margin-top .4s ease;
+}
+
+.program-details.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 24px;
+}
+
+.program-details__content {
+    min-height: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 0 36px;
+    box-shadow: var(--shadow);
+}
+
+.program-details.is-open .program-details__content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.program-details__content h3 {
+    font-size: 25px;
+    margin-bottom: 14px;
+}
+
+.program-details__content p {
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+@media (max-width: 780px) {
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-card {
+        min-height: 145px;
+        padding: 26px;
+    }
+
+    .program-details__content {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .program-card,
+    .program-details {
+        transition: none;
+    }
+}
