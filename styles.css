@@ -2864,3 +2864,30 @@ html {
         grid-template-columns: 1fr !important;
     }
 }
+
+/* Плавна зміна градієнта цифр */
+.stats-grid .stat-large strong {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg, #4B8DFF, #7B6DFF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stats-grid .stat-large strong::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #D4AF37, #FFE9A3, #C99722);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.stats-grid .stat-large:hover strong::after {
+    opacity: 1;
+}
